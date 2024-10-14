@@ -1,4 +1,5 @@
-package org.example;
+
+import java.lang.IllegalArgumentException;
 public class TimeCalculator {
     public double calculateTime(double distance, double speed) {
         if (speed <= 0) {

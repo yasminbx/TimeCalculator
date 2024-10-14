@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>Laskinweek5</artifactId>
+    <artifactId>lecture_demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -13,24 +13,14 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <dependencies>
         <!-- JUnit Dependency -->
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.1</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>TimeCalculator</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-text</artifactId>
-            <version>1.12.0</version>
         </dependency>
     </dependencies>
 
@@ -55,9 +45,9 @@
                         </goals>
                     </execution>
                 </executions>
-
-
             </plugin>
+
+            <!-- Surefire Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -69,12 +59,21 @@
                 </configuration>
             </plugin>
 
+            <!-- Maven Jar Plugin to add Main-Class to manifest -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>TimeCalculator</mainClass> <!-- Correct main class here -->
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
 
         </plugins>
-
-
-
     </build>
-
 
 </project>
